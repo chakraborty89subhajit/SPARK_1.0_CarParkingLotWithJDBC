@@ -1,0 +1,16 @@
+CREATE DATABASE mydb;
+
+USE mydb;
+
+CREATE TABLE Car (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    licence_plate_no VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE ParkingSpot (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    spot_no INT NOT NULL,
+    available BOOLEAN NOT NULL,
+    car_id INT,
+    FOREIGN KEY (car_id) REFERENCES Car(id)
+);
